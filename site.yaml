@@ -1,0 +1,12 @@
+---
+- name: Install and register  Redhat Insights
+  hosts: webservers
+
+  tasks:
+  - name: Install insights-client
+    yum: pkg=insights-client
+  - name: Register client
+    ansible.builtin.command: insights-client --register
+
+
+
